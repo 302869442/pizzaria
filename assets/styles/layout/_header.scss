@@ -1,0 +1,9 @@
+@use '../abstracts/mixins' as *;
+
+
+header{
+    min-height: 7em;
+    background-color: crimson;
+    color: white;
+    @include flex(column, unset)
+}

@@ -1,0 +1,17 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: var(--ff-primary);
+}
+
+ul{
+    list-style: none;
+}
+
+p{
+    line-height: 1.5;
+
+}

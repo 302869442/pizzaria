@@ -1,0 +1,12 @@
+@use '../abstracts/mixins' as *;
+
+.card{
+    @include flex(column);
+    padding: 2em;
+    max-width: 20em;
+    border-radius: .5rem;
+
+    &-img{
+        max-width: 100%;
+    }
+}

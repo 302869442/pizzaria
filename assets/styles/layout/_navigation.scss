@@ -1,0 +1,15 @@
+.navbar {
+  display: flex;
+  gap: 2em;
+  min-height: 4em;
+  font-size: var(--fs-primary);
+  align-items: center;
+  background-color: hsl(0, 0, 96%);
+
+  .nav-link {
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .nav-item {
+  }
+}

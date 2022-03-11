@@ -18,8 +18,14 @@
 			{{ encore_entry_script_tags('app') }}
 		{% endblock %}
 	</head>
-	<body>
 		{% include "navbar.html" %}
+	{% include "header.html" %}
+	<body>
 		{% block body %}{% endblock %}
+	<main>
+
+	</main>
+	{% block main %}{% endblock %}
+	{% include "footer.html" %}
 	</body>
 </html>
