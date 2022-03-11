@@ -11,9 +11,9 @@ class Home extends AbstractController
     /**
      * @Route("/")
      */
-    public function init(): Response
+    public function homepage(): Response
     {
-        $test = 'test';
-        return $this->render('base.html.twig', ['title' => $test]);
+        $test = ['test1', 'test2'];
+        return $this->render('/pizzapages/home.html.twig', ['categories' => $test]);
     }
 }

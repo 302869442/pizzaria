@@ -1,0 +1,18 @@
+<?php 
+
+namespace App\Controller;
+
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+
+class Contact extends AbstractController{
+    /**
+     * @Route("/contact")
+     */
+
+    public function ContactPage() {
+        return $this->render('/pizzapages/contact.html.twig');
+    }
+}
