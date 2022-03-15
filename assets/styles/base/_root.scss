@@ -1,6 +1,12 @@
+@use '../abstracts/variables' as *;
+
 :root{
 
-
+    @each $color, $shades in $colors {
+       @each $shade, $value in $shades {
+          --clr-#{$color}-#{$shade}: #{$value}; 
+       } 
+    }
     --ff-primary: "Roboto" sans-serif;
     --fs-primary: 1.2rem;
 }

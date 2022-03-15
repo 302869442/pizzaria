@@ -1,0 +1,28 @@
+@use '../abstracts/mixins' as *;
+
+form{
+    @include flex(column);
+
+    gap: 1em; 
+    max-width: 20em;
+    background-color: var(--clr-primary-100);
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    padding: 1em 3em;
+
+
+    input{
+        padding: .5em .7em;
+        border: none;
+        border-radius: .2em;
+
+        &:focus, &:focus-within{
+            outline: none;
+            box-shadow: 0px 0.25em 0px 0px crimson
+        }
+    }
+    label{
+        font-size: clamp(1rem, 1.5vw, 1.3rem);
+    }
+
+    
+}
