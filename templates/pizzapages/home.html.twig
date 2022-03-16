@@ -5,7 +5,21 @@
 	<main>
 		<div class="category-container">
 			{% for category in categories %}
-				{% include "card.html" %}
+
+				<div class="card">
+					<img src="../assets/img/category_vegan.png" alt="" class="card-img">
+
+
+					<div class="card-body">
+						<h2 class="card-title">
+							{{category.name}}
+						</h2>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, architecto?
+						</p>
+						<button class="btn" onclick="window.location = '{{path('app_contact')}}'">naar: Pizza {{category.name}}</button>
+					</div>
+				</div>
 			{% endfor %}
 		</div>
 	</main>

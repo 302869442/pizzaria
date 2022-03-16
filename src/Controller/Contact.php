@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class Contact extends AbstractController{
     /**
-     * @Route("/contact")
+     * @Route("/contact", name="app_contact")
      */
 
     public function ContactPage() {
