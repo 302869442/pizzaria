@@ -17,6 +17,5 @@ class Home extends AbstractController
     {
         $Category = $categoryRepository->findAll();
         return $this->render('/pizzapages/home.html.twig', ['categories' => $Category]);
-        // return new Response($Category->getName());
     }
 }
