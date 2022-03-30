@@ -5,7 +5,7 @@ header{
     min-height: 7em;
     background-color: var(--clr-primary-700);
     color: white;
-    @include flex(column, unset);
+    text-align: center;
 
     .header-buttons{
         @include flex(row);

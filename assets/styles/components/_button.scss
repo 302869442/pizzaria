@@ -5,12 +5,26 @@
     border-radius: .3rem;
     padding: .5rem 2.5rem;
     font-size: clamp(1rem, 2vw, 1.5rem);
+    position: relative;
 
-    &::before{
-        transition: ;
+    &::after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: .3rem;
+        content: "";
+        
+        width: 0%;
+        height: 100%;
+        transition: width 300ms ease;
     }
-
+    
     &:hover{
-
+        color: white;
+    }
+    &:hover::after, &:focus::after{
+        width: 100%;
+        z-index: 0;
+        background-color: var(--clr-accent-300);
     }
 }

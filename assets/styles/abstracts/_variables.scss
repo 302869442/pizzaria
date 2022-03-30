@@ -5,38 +5,52 @@ $colors: (
     900: hsl(0, 0%, 0%),
   ),
   accent: (
-    300: hsl(130, 14%, 25%),
+    300: hsl(129, 14%, 37%),
   ),
 );
 
 $breakpoints: (
-    small: 40em,
-    medium: 65em,
+  small: 40em,
+  medium: 65em,
 );
 
 $padding-sizes: (
-    1: .5rem,
-    2: 1rem,
-    4: 2rem,
-    8: 4rem,
-    16: 8rem
+  1: 0.5rem,
+  2: 1rem,
+  4: 2rem,
+  8: 4rem,
+  16: 8rem,
 );
 
 $padding-modes: (
-    inline,
-    inline-start,
-    inline-end,
-    block,
-    block-start,
-    block-end
+  inline,
+  inline-start,
+  inline-end,
+  block,
+  block-start,
+  block-end
 );
 
-@each $mode in $padding-modes {
-    .padding-#{$mode} {
-        @each $size, $value in $padding-sizes {
-            &-#{$size}{
-                padding-#{$mode}: $value;
-            }
-        }
-    }
-}
+$margin-sizes: (
+  1: 0.5rem,
+  2: 1rem,
+  4: 2rem,
+  8: 4rem,
+  16: 8rem,
+);
+
+$margin-modes: (
+  inline,
+  inline-start,
+  inline-end,
+  block,
+  block-start,
+  block-end
+);
+
+$grid-sizes: (
+  3: 3,
+  6: 6,
+  9: 9,
+  12: 12,
+);
