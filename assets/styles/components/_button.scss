@@ -1,7 +1,16 @@
 .btn{
     border: none;
-    background-color: crimson;
-    color: white;
+    background-color: white;
+    color: var(--clr-accent-300);
     border-radius: .3rem;
+    padding: .5rem 2.5rem;
     font-size: clamp(1rem, 2vw, 1.5rem);
+
+    &::before{
+        transition: ;
+    }
+
+    &:hover{
+
+    }
 }

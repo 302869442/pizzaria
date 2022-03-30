@@ -3,7 +3,12 @@
 
 header{
     min-height: 7em;
-    background-color: crimson;
+    background-color: var(--clr-primary-700);
     color: white;
-    @include flex(column, unset)
+    @include flex(column, unset);
+
+    .header-buttons{
+        @include flex(row);
+        gap: 5em;
+    }
 }

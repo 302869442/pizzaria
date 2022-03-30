@@ -1,8 +1,9 @@
-@use './abstracts/mixins';
-@use './abstracts/variables';
-
 @use './base/root';
 @use './base/reset';
+
+@use './abstracts/mixins';
+@use './abstracts/variables';
+@use './abstracts/utilities';
 
 @use './components/button';
 @use './components/card';

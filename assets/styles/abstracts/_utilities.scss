@@ -1,0 +1,8 @@
+@use './mixins' as *;
+
+.flex-column {
+    @include flex(column);
+}
+.flex-row {
+    @include flex(row);
+}

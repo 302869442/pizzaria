@@ -1,13 +1,42 @@
 $colors: (
-    primary: (
-        100: hsl(0, 0%, 90%),
-        200: crimson
-    ),
-    accent: (
-        100: #000920,
-    ),
-    text: (
-        100: white,
-        200: rgb(20, 20, 20)
-    )
-)
+  primary: (
+    100: hsl(0, 0%, 100%),
+    700: hsl(130, 14%, 25%),
+    900: hsl(0, 0%, 0%),
+  ),
+  accent: (
+    300: hsl(130, 14%, 25%),
+  ),
+);
+
+$breakpoints: (
+    small: 40em,
+    medium: 65em,
+);
+
+$padding-sizes: (
+    1: .5rem,
+    2: 1rem,
+    4: 2rem,
+    8: 4rem,
+    16: 8rem
+);
+
+$padding-modes: (
+    inline,
+    inline-start,
+    inline-end,
+    block,
+    block-start,
+    block-end
+);
+
+@each $mode in $padding-modes {
+    .padding-#{$mode} {
+        @each $size, $value in $padding-sizes {
+            &-#{$size}{
+                padding-#{$mode}: $value;
+            }
+        }
+    }
+}
