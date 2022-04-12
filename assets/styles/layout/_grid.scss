@@ -3,3 +3,20 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 3em;
 }
+
+.order-pizza{
+    display: grid;
+    grid-template-areas: 
+    "info-text order-form"
+    "info-text order-form"
+    ;
+    gap: 1rem;
+    background-color: var(--clr-primary-700);
+
+    p:first-of-type{
+        grid-area: info-text;
+    }
+    form{
+        grid-area: order-form;
+    }
+}

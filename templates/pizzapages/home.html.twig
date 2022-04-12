@@ -6,8 +6,25 @@
 		<div class="category-container">
 			{% for category in categories %}
 				{% include "card.html.twig" %}
-				
+
 			{% endfor %}
 		</div>
+		<section class="order-pizza">
+			<h2>Order Your Pizza Now!</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur facilis eum placeat ipsum ipsa nulla autem, suscipit, quisquam aut harum itaque dolor voluptatibus cupiditate ipsam enim, illo possimus. Quasi quisquam sequi nemo nulla cumque sint? Perferendis fugit natus porro repellendus!</p>
+
+			{% if is_granted('IS_AUTHENTICATED_FULLY')%}
+				{{form_start(form)}}
+				<h2>Order Pizza</h2>
+				{{form_widget(form)}}
+				<button type="submit" class="btn">Make order</button>
+				{{form_end(form)}}
+			{% else %}
+				<p>You need to login to place an order</p>
+				<button>go to login</button>
+			{% endif %}
+
+		</section>
 	</main>
+
 {% endblock %}

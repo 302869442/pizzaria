@@ -7,6 +7,12 @@
 .flex-row {
     @include flex(row, unset);
 }
+.align-center {
+    align-items: center;
+}
+.justify-center {
+    justify-content: center;
+}
 
 @each $mode in $padding-modes {
     .padding-#{$mode} {

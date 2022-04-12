@@ -5,6 +5,10 @@ header{
     min-height: 7em;
     background-color: var(--clr-primary-700);
     color: white;
+    .sub-title{
+        max-width: fit-content;
+        margin-inline: auto;
+    }
     text-align: center;
 
     .header-buttons{
