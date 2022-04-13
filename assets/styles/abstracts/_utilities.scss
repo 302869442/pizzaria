@@ -24,7 +24,7 @@
     }
 }
 @each $mode in $margin-modes {
-    .padding-#{$mode} {
+    .margin-#{$mode} {
         @each $size, $value in $margin-sizes {
             &-#{$size}{
                 padding-#{$mode}: $value;
