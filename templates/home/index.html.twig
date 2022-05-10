@@ -4,7 +4,7 @@
 {% block main %}
 	<main>
 		{% include "header.html" %}
-		<div class="category-container margin-inline-4">
+		<div class="category-container grid-col-3 margin-inline-4 margin-block-8 gap-4">
 			{% for category in categories %}
 				{% include "card.html.twig" %}
 
@@ -13,7 +13,7 @@
 		<section class="order-pizza">
 			<article class="order-text">
 				<h2>Order Your Pizza Now!</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur facilis eum placeat ipsum ipsa nulla autem, suscipit, quisquam aut harum itaque dolor voluptatibus cupiditate ipsam enim, illo possimus. Quasi quisquam sequi nemo nulla cumque sint? Perferendis fugit natus porro repellendus!</p>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem libero rem, magnam pariatur consequatur accusantium!</p>
 			</article>
 
 			{% if is_granted('IS_AUTHENTICATED_FULLY')%}

@@ -3,67 +3,40 @@
 namespace App\Entity;
 
 use App\Repository\OrderRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=OrderRepository::class)
- * @ORM\Table(name="`order`")
- */
+#[ORM\Entity(repositoryClass: OrderRepository::class)]
+#[ORM\Table(name: '`order`')]
 class Order
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private $fname;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $sname;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $lname;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private $address;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private $city;
 
-    /**
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Column(type: 'string', length: 255)]
     private $zipcode;
 
-    /**
-     * @ORM\Column(type="array")
-     */
-    private $status = [];
+    #[ORM\Column(type: 'string', length: 255)]
+    private $status;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="orders")
-     */
-    private $user;
+    #[ORM\ManyToOne(targetEntity: Size::class, inversedBy: 'Order_size')]
+    private $size;
 
-    /**
-     * @ORM\Column(type="array")
-     */
-    private $pizzas = [];
-
-    public function __construct()
-    {
-        $this->pizza = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(targetEntity: Pizza::class, inversedBy: 'pizza_order')]
+    private $pizza;
 
     public function getId(): ?int
     {
@@ -82,14 +55,14 @@ class Order
         return $this;
     }
 
-    public function getSname(): ?string
+    public function getLname(): ?string
     {
-        return $this->sname;
+        return $this->lname;
     }
 
-    public function setSname(string $sname): self
+    public function setLname(string $lname): self
     {
-        $this->sname = $sname;
+        $this->lname = $lname;
 
         return $this;
     }
@@ -118,75 +91,51 @@ class Order
         return $this;
     }
 
-    public function getZipcode(): ?int
+    public function getZipcode(): ?string
     {
         return $this->zipcode;
     }
 
-    public function setZipcode(int $zipcode): self
+    public function setZipcode(string $zipcode): self
     {
         $this->zipcode = $zipcode;
 
         return $this;
     }
 
-    public function getStatus(): ?array
+    public function getStatus(): ?string
     {
         return $this->status;
     }
 
-    public function setStatus(array $status): self
+    public function setStatus(string $status): self
     {
         $this->status = $status;
 
         return $this;
     }
 
-    public function getUser(): ?User
+    public function getSize(): ?Size
     {
-        return $this->user;
+        return $this->size;
     }
 
-    public function setUser(?User $user): self
+    public function setSize(?Size $size): self
     {
-        $this->user = $user;
+        $this->size = $size;
 
         return $this;
     }
 
-    // /**
-    //  * @return Collection<int, pizza>
-    //  */
-    // public function getPizza(): Collection
-    // {
-    //     return $this->pizza;
-    // }
+    public function getPizza(): ?Pizza
+    {
+        return $this->pizza;
+    }
 
-    // public function addPizza(pizza $pizza): self
-    // {
-    //     if (!$this->pizza->contains($pizza)) {
-    //         $this->pizza[] = $pizza;
-    //     }
+    public function setPizza(?Pizza $pizza): self
+    {
+        $this->pizza = $pizza;
 
-    //     return $this;
-    // }
-
-    // public function removePizza(pizza $pizza): self
-    // {
-    //     $this->pizza->removeElement($pizza);
-
-    //     return $this;
-    // }
-
-    // public function getPizzas(): ?array
-    // {
-    //     return $this->pizzas;
-    // }
-
-    // public function setPizzas(array $pizzas): self
-    // {
-    //     $this->pizzas = $pizzas;
-
-    //     return $this;
-    // }
+        return $this;
+    }
 }

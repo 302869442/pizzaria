@@ -1,47 +1,56 @@
-@use './mixins' as *;
-@use './variables' as *;
+@use "./mixins" as *;
+@use "./variables" as *;
 
 .flex-column {
-    @include flex(column, unset);
+  @include flex(column, unset);
 }
 .flex-row {
-    @include flex(row, unset);
+  @include flex(row, unset);
 }
 .align-center {
-    align-items: center;
+  align-items: center;
 }
 .justify-center {
-    justify-content: center;
+  justify-content: center;
+}
+.grid-center {
+  place-items: center;
 }
 
 @each $mode in $padding-modes {
-    .padding-#{$mode} {
-        @each $size, $value in $padding-sizes {
-            &-#{$size}{
-                padding-#{$mode}: $value;
-            }
-        }
+  .padding-#{$mode} {
+    @each $size, $value in $padding-sizes {
+      &-#{$size} {
+        padding-#{$mode}: $value;
+      }
     }
+  }
 }
 @each $mode in $margin-modes {
-    .margin-#{$mode} {
-        @each $size, $value in $margin-sizes {
-            &-#{$size}{
-                padding-#{$mode}: $value;
-            }
-        }
+  .margin-#{$mode} {
+    @each $size, $value in $margin-sizes {
+      &-#{$size} {
+        margin-#{$mode}: $value;
+      }
     }
+  }
 }
 
-.grid-auto-size{
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: repeat(auto-fit, min-max(20em, 1fr));
+.grid-auto-size {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, min-max(20em, 1fr));
 }
 
 @each $size, $value in $grid-sizes {
-    .grid-col-#{$size} {
-        display: grid;
-        grid-template-columns: repeat($value, 1fr);
+  .grid-col-#{$size} {
+    display: grid;
+    grid-template-columns: repeat($value, 1fr);
+    place-items: center;
+  }
+}
+@each $size, $value in $gap-sizes {
+    .gap-#{$size} {
+        gap: #{$value};
     }
 }

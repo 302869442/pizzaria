@@ -2,21 +2,32 @@
 
 namespace App\Controller;
 
+use App\Form\AddToCartType;
+use App\Repository\PizzaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\PizzaRepository;
+
 
 class CategoryController extends AbstractController
 {
-    /**
-     * @Route("/category/{id}", name="app_category", methods={"GET","HEAD"})
-     */
-    public function show(int $id, PizzaRepository $PizzaRepository): Response
+    #[Route('/category/{id}', name: 'app_category', methods: ['GET', 'HEAD', 'POST'])]
+    public function index(int $id, Request $request, PizzaRepository $pizzaRepository): Response
     {
-        $pizzas = $PizzaRepository->findBy(array('category' => $id));
-        return $this->render('category/index.html.twig', [
+        $pizzas = $pizzaRepository->findBy(array('category' => $id));
+
+        $form = $this->createForm(AddToCartType::class);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            
+        }
+
+        return $this->renderForm('category/index.html.twig', [
             'pizzas' => $pizzas,
+            'form' => $form
         ]);
     }
 }

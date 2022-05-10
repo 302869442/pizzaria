@@ -1,11 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CategoryController!{% endblock %}
+{% block title %}Hello CategoryController!
+{% endblock %}
 
-{% block body %}
-    {% for pizza in pizzas %}
-        <div>
-            {{pizza.name}}
-        </div>
-    {% endfor %}
+{% block main %}
+	<main>
+		<section class="product-container grid-col-3 grid-center">
+			{% for pizza in pizzas %}
+				<section class="card">
+					<h2>{{pizza.name}}</h2>
+					<button class="btn" onclick="window.location.href=' {{path('app_detail', {id: pizza.id})}}'">Details</button>
+				</section>
+			{% endfor %}
+		</section>
+		{# {{form_start(form)}}
+		<h3>pizzas</h3>
+			<ul class="pizza_orders"
+				data-index="{{ form.pizza_orders|length > 0 ? form.pizza_orders|last.vars.name + 1 : 0 }}"
+				data-prototype="{{ form_widget(form.pizza_orders.vars.prototype)|e('html_attr') }}"
+			></ul>
+		{{form_end(form)}} #}
+	</main>
 {% endblock %}

@@ -3,7 +3,11 @@
 namespace App\Form;
 
 use App\Entity\Order;
+use App\Entity\Size;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,10 +17,22 @@ class OrderType extends AbstractType
     {
         $builder
             ->add('fname')
-            ->add('sname')
+            ->add('lname')
             ->add('address')
             ->add('city')
             ->add('zipcode')
+            ->add('size', EntityType::class, array(
+                // 'choices' => [
+                //     'medium(25cm)' => new Size(1),
+                //     'large(30cm)' => new Size(2),
+                //     'calzone' => new Size(3),
+                // ]
+                'class' => Size::class,
+                'choice_label' => 'name'
+            ))
+            ->add('submit', SubmitType::class, array(
+                'attr' => ['class' => 'btn']
+            ))
         ;
     }
 

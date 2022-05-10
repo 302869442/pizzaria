@@ -1,10 +1,13 @@
 @use '../abstracts/mixins' as *;
+@use 'sass:list';
 
 .card{
     @include flex(column);
     padding: 2em;
+    background-color: var(--clr-primary-700);
     max-width: 20em;
     border-radius: .5rem;
+    box-shadow: .3rem .2rem .25rem hsla(0, 0%, 0%, .3);
 
     &-img{
         max-width: 100%;
