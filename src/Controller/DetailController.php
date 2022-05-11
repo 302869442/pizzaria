@@ -15,12 +15,12 @@ class DetailController extends AbstractController
     #[Route('/detail/{id}', name: 'app_detail')]
     public function index(int $id, PizzaRepository $pizzaRepository, Request $request, SessionInterface $session): Response
     {
-        $pizza = $pizzaRepository->find($id);
+        // $pizza = $pizzaRepository->find($id);
 
         $form = $this->createForm(AddToCartType::class);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $session->set('pizza', $pizza);
+            $session->set('pizza', $id);
             return $this->redirectToRoute('app_order');
         }
 

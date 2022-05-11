@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Order;
 use App\Entity\Size;
+use Doctrine\DBAL\Types\ObjectType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;

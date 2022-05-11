@@ -17,11 +17,7 @@
 			</article>
 
 			{% if is_granted('IS_AUTHENTICATED_FULLY')%}
-				{{form_start(form)}}
-					<h2>Order Pizza</h2>
-				{{form_widget(form)}}
-					<button type="submit" class="btn">Make order</button>
-				{{form_end(form)}}
+
 			{% else %}
 				<p>You need to login to place an order</p>
 				<button class="btn">go to login</button>
