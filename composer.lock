@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "feebafb0b0cb71ffaf991deb413e6fe2",
+    "content-hash": "3cd54a7953c8cab07751015df22f9b29",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -5654,16 +5654,16 @@
         },
         {
             "name": "symfony/validator",
-            "version": "v5.4.6",
+            "version": "v5.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "ab461eab209e3be062ba9c609d37b37e8364dbe4"
+                "reference": "bdc6d04ba95c73ccbf906b4ad9b8775c738d83ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/ab461eab209e3be062ba9c609d37b37e8364dbe4",
-                "reference": "ab461eab209e3be062ba9c609d37b37e8364dbe4",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/bdc6d04ba95c73ccbf906b4ad9b8775c738d83ad",
+                "reference": "bdc6d04ba95c73ccbf906b4ad9b8775c738d83ad",
                 "shasum": ""
             },
             "require": {
@@ -5747,7 +5747,7 @@
             "description": "Provides tools to validate values",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/validator/tree/v5.4.6"
+                "source": "https://github.com/symfony/validator/tree/v5.4.8"
             },
             "funding": [
                 {
@@ -5763,7 +5763,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-02T12:42:23+00:00"
+            "time": "2022-04-15T08:07:45+00:00"
         },
         {
             "name": "symfony/var-dumper",

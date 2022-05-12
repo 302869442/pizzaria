@@ -28,7 +28,7 @@ class PizzaFixtures extends Fixture
                 
                 $pizza = new Pizza();
                 $pizza->setName('pizza'.$i);
-                $pizza->setImage('image'.$i);
+                $pizza->setImage('placeholder.jpg');
                 foreach ($categories as $category) {
                     $pizza->setCategory($category);
                 }

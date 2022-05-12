@@ -10,24 +10,30 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, ValidatorInterface $validator): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isEmpty()) {
             // encode the plain password
             $user->setPassword(
-            $userPasswordHasher->hashPassword(
+                $userPasswordHasher->hashPassword(
                     $user,
                     $form->get('plainPassword')->getData()
                 )
             );
+            $errors = $validator->validate($user);
+            if (count($errors) > 0) {
+                $errorsString = (string) $errors;
+                return new Response($errorsString);
+            }
 
             $entityManager->persist($user);
             $entityManager->flush();

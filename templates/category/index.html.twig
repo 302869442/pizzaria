@@ -9,6 +9,7 @@
 			{% for pizza in pizzas %}
 				<section class="card">
 					<h2>{{pizza.name}}</h2>
+					<img class="card-img" src="{{asset('img/placeholder.png')}}" alt="">
 					<button class="btn" onclick="window.location.href=' {{path('app_detail', {id: pizza.id})}}'">Details</button>
 				</section>
 			{% endfor %}

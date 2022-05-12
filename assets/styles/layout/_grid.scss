@@ -7,8 +7,15 @@
     }
 }
 
-body{
-    display: grid;
+.product-container{
+    overflow-y: auto;
+    grid-template-columns: unset;
+    @include mq(small){
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include mq(medium){
+        
+    }
 }
 
 .order-pizza{
