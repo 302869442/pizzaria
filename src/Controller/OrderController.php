@@ -30,6 +30,7 @@ class OrderController extends AbstractController
             $order->setStatus('pending');
             // var_dump($data['']);
             // dd($order->getPizza());
+            $this->addFlash('success', 'Order has been successfully placed');
             $manager->persist($order);
             $manager->flush();
         }

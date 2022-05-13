@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -21,11 +21,12 @@
 		{% endblock %}
 	</head>
 	{% include "navbar.html.twig" %}
-	{% include "banner.html.twig" %}
+	<header>
+		{% include "banner.html.twig" %}
+	</header>
 	<body>
 		{% block body %}{% endblock %}
-		{% block main %}
-		{% endblock %}
+		{% block main %}{% endblock %}
 		{% include "footer.html" %}
 		<script src="{{asset('scripts/main.js')}}"></script>
 	</body>

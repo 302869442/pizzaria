@@ -5,11 +5,11 @@
 
 {% block main %}
 	<main>
-		<section class="product-container grid-col-3 grid-center">
+		<section class="product-container margin-inline-8 grid-center gap-8">
 			{% for pizza in pizzas %}
 				<section class="card">
 					<h2>{{pizza.name}}</h2>
-					<img class="card-img" src="{{asset('img/placeholder.png')}}" alt="">
+					<img class="card-img margin-block-end-4" src="{{asset('img/placeholder.png')}}" alt="">
 					<button class="btn" onclick="window.location.href=' {{path('app_detail', {id: pizza.id})}}'">Details</button>
 				</section>
 			{% endfor %}

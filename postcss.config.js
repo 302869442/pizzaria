@@ -5,7 +5,7 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   plugins: [
     autoprefixer({}),
-    // cssnano({ preset: "default" }),
+    cssnano({ preset: "default" }),
     // purgecss({
     //   content: ["./**/*.html"],
     // }),

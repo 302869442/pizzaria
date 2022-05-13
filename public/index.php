@@ -15,7 +15,7 @@ return function (array $context) {
 //  * TODO: category page categories pulled from database
 //  * TODO: show pizzas per category
 //  * TODO: Order gets saved to database
- * TODO: customer gets message to confirm the order 
+//  * TODO: customer gets message to confirm the order 
 //  * TODO: Show orders on login page
 //  * TODO: clicked pizza gets saved to session storage
  * TODO: styles
