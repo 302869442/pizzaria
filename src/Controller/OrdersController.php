@@ -12,8 +12,9 @@ class OrdersController extends AbstractController
     #[Route('/orders', name: 'app_orders')]
     public function index(OrderRepository $orderRepository): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $orders = $orderRepository->findAll();
-        
+       
 
         return $this->render('orders/index.html.twig', [
             'orders' => $orders,

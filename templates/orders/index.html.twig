@@ -1,13 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello OrdersController!{% endblock %}
+{% block title %}Hello OrdersController!
+{% endblock %}
 
 {% block body %}
-    <section class="orders">
-        {% for order in orders %}
-            <section class="card">
-                {{order.id}}
-            </section>
-        {% endfor %}
-    </section>
+	<section class="orders">
+		{% for order in orders %}
+			<section class="card">
+				<table>
+					<thead>
+						<tr>
+							<th>pizza</th>
+							<th>size</th>
+							<th>category</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>{{order.pizza.name}}</th>
+							<th>{{order.size.name}}</th>
+							<th>{{order.pizza.category.name}}</th>
+						</tr>
+					</tbody>
+				</table>
+			</section>
+		{% endfor %}
+	</section>
 {% endblock %}
