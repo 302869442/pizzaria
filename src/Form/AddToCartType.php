@@ -20,7 +20,8 @@ class AddToCartType extends AbstractType
                 
             ))
             ->add('make_order', SubmitType::class, [
-                'label' => false,
+                'label' => 'add to order',
+                'attr' => array('class' => 'btn ')
             ])
         ;
     }

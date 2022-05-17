@@ -1,6 +1,12 @@
 {% extends "base.html.twig" %}
 
-{% block body %}
+{% block main %}
+
+        {% for item in app.flashes('success') %}
+            <p>{{item}}</p>
+        {% endfor %}
+
     {{form_start(form)}}
+        <h2>Place Order</h2>
     {{form_end(form)}}
 {% endblock %}

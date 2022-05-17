@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block main %}
     {{form_start(form)}}
+        <h2>{{pizza.name}}</h2>
+        <img src="{{asset('/img/'~pizza.image)}}" alt="" class="card-img">
+        {{form_errors(form)}}
     {{form_end(form)}}
 {% endblock %}

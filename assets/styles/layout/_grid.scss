@@ -8,13 +8,14 @@
 }
 
 .product-container{
-    overflow-y: auto;
+    // overflow-y: auto;
+    display: grid;
     grid-template-columns: unset;
     @include mq(small){
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
     @include mq(medium){
-        
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
