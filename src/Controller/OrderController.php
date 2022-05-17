@@ -25,11 +25,8 @@ class OrderController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
-            // $size = $sizeRepository->find($data['size']);
             $order->setPizza($pizza);
             $order->setStatus('pending');
-            // var_dump($data['']);
-            // dd($order->getPizza());
             $this->addFlash('success', 'Order has been successfully placed');
             $manager->persist($order);
             $manager->flush();
